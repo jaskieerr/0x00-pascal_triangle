@@ -1,18 +1,18 @@
 #!/usr/bin/python3
-'''pascale triangle exercise'''
+"""Triangle Triangle"""
 
 
 def pascal_triangle(n):
-    '''func'''
+    """Triangle"""
     if n <= 0:
         return []
-    triangle = [[1]]
-    for i in range(1, n):
-        i = [1]
-        for j in range(1, i):
-            element = triangle[i - 1][j - 1] + triangle[i - 1][j]
-            i.append(element)
-        i.append(1)
-        triangle.append(i)
+    p_triangle = [[1]]
+    for r in range(1, n):
+        new_row = [1]
+        for i in range(1, r):
+            element = p_triangle[r - 1][i - 1] + p_triangle[r - 1][i]
+            new_row.append(element)
+        new_row.append(1)
+        p_triangle.append(new_row)
 
-    return triangle
+    return p_triangle
