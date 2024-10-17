@@ -1,17 +1,18 @@
 #!/usr/bin/python3
 '''
-Calculate the minimum number of operations needed to result in exactly n H characters
+Calculate the minimum numsult in bla blabla
 '''
+
 
 def minOperations(n):
     '''
-    Calculates the fewest number of operations required to achieve n H characters.
+    Calculates the fewest number of operations required to a
 
     Args:
         n: The target number of H characters.
 
     Returns:
-        The fewest number of operations needed to reach exactly n H characters.
+        The fewest number of operationtly n H characters.
         Returns 0 if n cannot be achieved.
     '''
     if not isinstance(n, int) or n <= 1:
