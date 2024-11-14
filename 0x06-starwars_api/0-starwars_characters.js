@@ -1,29 +1,32 @@
 #!/usr/bin/node
-// Star Wars API with JS
+// using star wars API
 
-const fetch = require('request');
-const MOVIE_ID = process.argv[2];
+const request = require('request');
+const Film_id = process.argv[2];
 
-const API_BASE_URL = 'https://swapi-api.hbtn.io/api/films';
 
-function fetchData(url) {
+const URL = 'https://swapi-api.hbtn.io/api/films';
+
+function doRequest (url) {
   return new Promise(function (resolve, reject) {
-    fetch(url, function (err, response, data) {
-      if (!err && response.statusCode === 200) {
-        resolve(JSON.parse(data));
+    request(url, function (error, res, body) {
+      if (!error && res.statusCode === 200) {
+        resolve(JSON.parse(body));
       } else {
-        reject(err);
+        reject(error);
       }
     });
   });
 }
 
-async function displayCharacters(movieId) {
-  const movieData = await fetchData(`${API_BASE_URL}/${movieId}`);
-  for (const characterUrl of movieData.characters) {
-    const character = await fetchData(characterUrl);
-    console.log(character.name);
+
+
+async function main (filmID) {
+  const res = await doRequest(`${URL}/${filmID}`);
+  for (const e of res.characters) {
+    const pj = await doRequest(e);
+    console.log(pj.name);
   }
 }
 
-displayCharacters(MOVIE_ID);
+main(Film_id);
