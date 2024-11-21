@@ -1,15 +1,14 @@
 #!/usr/bin/python3
-"""Rotate a 2D matrix by 90 degrees clockwise."""
+'''Rotate a 2D matrix by 90 degrees clockwise'''
 
-def rotate_2d_matrix(matrix):
-    """Rotate matrix in-place by 90 degrees clockwise."""
-    size = len(matrix)
 
-    # Transpose the matrix (swap rows and columns)
-    for row in range(size):
-        for col in range(row, size):
-            matrix[col][row], matrix[row][col] = matrix[row][col], matrix[col][row]
+def rotate_2d_matrix(mtx):
+    '''Rotate matrix in-place by 90 degrees clockwise'''
+    size = len(mtx)
 
-    # Reverse each row to complete the rotation
-    for row in range(size):
-        matrix[row] = matrix[row][::-1]
+    for r in range(size):
+        for c in range(r, size):
+            mtx[c][r], mtx[r][c] = mtx[r][c], mtx[c][r]
+
+    for r in range(size):
+        mtx[r] = mtx[r][::-1]
