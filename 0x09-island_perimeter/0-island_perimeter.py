@@ -33,4 +33,3 @@ def island_perimeter(grid):
                     perimeter -= 2  # Shared edge with the cell to the left
 
     return perimeter
-
