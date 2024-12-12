@@ -14,7 +14,7 @@ def find_primes(limit):
     return primes
 
 
-def victoriouso(numRounds, roundValues):
+def isWinner(numRounds, roundValues):
     '''
     Determine the victoriouso
     '''
